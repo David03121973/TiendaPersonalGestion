@@ -2417,108 +2417,14 @@ export default function ProductosViwe() {
   } else {
     return (
       <View style={{ flex: 1 }}>
-        {/*Barra superior*/}
-        <Navbar />
-        {/* Vista animada que se despliega hacia la izquierda */}
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            marginTop: "10%",
-          }}
-        >
-          {isPermisoButtonAddProducto && (
-            <TouchableOpacity
-              onPress={() => {
-                auxSetModalProductsDates();
-              }}
-              style={{
-                flexDirection: "row",
-                height: 30,
-                width: "12%",
-                alignItems: "center",
-                justifyContent: "center",
-                shadowColor: Colors.azul_Oscuro, // Color de la sombra
-                shadowOffset: { width: 0, height: 0 },
-                shadowOpacity: 0.6, // Ajusta la opacidad para hacer la sombra más difuminada
-                shadowRadius: 14, // Difuminado
-                borderColor: Colors.azul_Claro,
-                borderWidth: 3,
-                padding: 10,
-                borderRadius: 10,
-                marginHorizontal: "1%",
-                marginTop: "1%",
-                backgroundColor: Colors.azul_Claro, // Color de fondo del botón
-              }}
-            >
-              <Text
-                style={[
-                  styles.radioButtonTextDesktop,
-                  sortProductos?.criterioOrden === "option1" &&
-                    styles.radioButtonSelected &&
-                    styles.radioButtonTextSelected,
-                ]}
-              >
-                Agregar Producto
-              </Text>
-            </TouchableOpacity>
-          )}
-
-          <TouchableOpacity
-            onPress={() => exportarExel()}
-            style={{
-              flexDirection: "row",
-              height: 30,
-              width: "12%",
-              alignItems: "center",
-              justifyContent: "center",
-              shadowColor: Colors.azul_Oscuro, // Color de la sombra
-              shadowOffset: { width: 0, height: 0 },
-              shadowOpacity: 0.6, // Ajusta la opacidad para hacer la sombra más difuminada
-              shadowRadius: 14, // Difuminado
-              borderColor: Colors.verde_claro,
-              borderWidth: 3,
-              padding: 10,
-              borderRadius: 10,
-              marginHorizontal: "1%",
-              marginTop: "1%",
-              backgroundColor: Colors.verde_claro, // Color de fondo del botón
-            }}
-          >
-            <Image
-              source={require("../images/exel.png")}
-              style={{ width: 20, height: 20, marginRight: "10%" }}
-            />
-            <Text
-              style={[
-                styles.radioButtonTextDesktop,
-                sortProductos?.criterioOrden === "option1" &&
-                  styles.radioButtonSelected &&
-                  styles.radioButtonTextSelected,
-              ]}
-            >
-              Exportar a Excel
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "flex-start",
-            marginLeft: "1%",
-          }}
-        >
-          {/*Contenedor para las opciones de busqueda del paciente*/}
-          <LinearGradient
+        {/*Contenedor para las opciones de busqueda del paciente*/}
+        <LinearGradient
             colors={[Colors.azul_Claro, Colors.azul_Oscuro]} // Gradiente de azul oscuro a azul claro
             start={[0, 0]}
             end={[1, 0]}
             style={styles.searchContainerDesktop}
           >
-            <Text style={styles.textSearchDesktop}>Nombre del producto:</Text>
+            {/*<Text style={styles.textSearchDesktop}>Nombre del producto:</Text>
             <CustomTextImputSearch
               style={styles.customTextImputSearchFullDesktop}
               placeholder="Nombre del producto"
@@ -2663,8 +2569,102 @@ export default function ProductosViwe() {
                   Buscar
                 </Text>
               </TouchableOpacity>
-            </View>
+            </View>*/}
           </LinearGradient>
+        {/* Vista animada que se despliega hacia la izquierda */}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            marginTop: "10%",
+          }}
+        >
+          {isPermisoButtonAddProducto && (
+            <TouchableOpacity
+              onPress={() => {
+                auxSetModalProductsDates();
+              }}
+              style={{
+                flexDirection: "row",
+                height: 30,
+                width: "12%",
+                alignItems: "center",
+                justifyContent: "center",
+                shadowColor: Colors.azul_Oscuro, // Color de la sombra
+                shadowOffset: { width: 0, height: 0 },
+                shadowOpacity: 0.6, // Ajusta la opacidad para hacer la sombra más difuminada
+                shadowRadius: 14, // Difuminado
+                borderColor: Colors.azul_Claro,
+                borderWidth: 3,
+                padding: 10,
+                borderRadius: 10,
+                marginHorizontal: "1%",
+                marginTop: "1%",
+                backgroundColor: Colors.azul_Claro, // Color de fondo del botón
+              }}
+            >
+              <Text
+                style={[
+                  styles.radioButtonTextDesktop,
+                  sortProductos?.criterioOrden === "option1" &&
+                    styles.radioButtonSelected &&
+                    styles.radioButtonTextSelected,
+                ]}
+              >
+                Agregar Producto
+              </Text>
+            </TouchableOpacity>
+          )}
+
+          <TouchableOpacity
+            onPress={() => exportarExel()}
+            style={{
+              flexDirection: "row",
+              height: 30,
+              width: "12%",
+              alignItems: "center",
+              justifyContent: "center",
+              shadowColor: Colors.azul_Oscuro, // Color de la sombra
+              shadowOffset: { width: 0, height: 0 },
+              shadowOpacity: 0.6, // Ajusta la opacidad para hacer la sombra más difuminada
+              shadowRadius: 14, // Difuminado
+              borderColor: Colors.verde_claro,
+              borderWidth: 3,
+              padding: 10,
+              borderRadius: 10,
+              marginHorizontal: "1%",
+              marginTop: "1%",
+              backgroundColor: Colors.verde_claro, // Color de fondo del botón
+            }}
+          >
+            <Image
+              source={require("../images/exel.png")}
+              style={{ width: 20, height: 20, marginRight: "10%" }}
+            />
+            <Text
+              style={[
+                styles.radioButtonTextDesktop,
+                sortProductos?.criterioOrden === "option1" &&
+                  styles.radioButtonSelected &&
+                  styles.radioButtonTextSelected,
+              ]}
+            >
+              Exportar a Excel
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            marginLeft: "1%",
+          }}
+        >
+          {/*Barra superior*/}
+         <Navbar />
           {loading ? (
             <ActivityIndicator
               size={150}

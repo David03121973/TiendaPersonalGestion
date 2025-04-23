@@ -1320,8 +1320,6 @@ export default function TiendasView() {
   } else {
     return (
       <View style={{ flex: 1 }}>
-        {/*Barra superior*/}
-        <Navbar />
         {/* Vista animada que se despliega hacia la izquierda */}
         <View
           style={{
@@ -1375,13 +1373,9 @@ export default function TiendasView() {
             marginLeft: "1%",
           }}
         >
-          {/*Contenedor para las opciones de busqueda del paciente*/}
-          <LinearGradient
-            colors={[Colors.azul_Claro, Colors.azul_Oscuro]} // Gradiente de azul oscuro a azul claro
-            start={[0, 0]}
-            end={[1, 0]}
-            style={styles.searchContainerDesktop}
-          ></LinearGradient>
+          {/*Barra superior*/}
+          <Navbar />
+          
           {loading ? (
             <ActivityIndicator
               size={150}

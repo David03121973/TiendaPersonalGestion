@@ -1108,7 +1108,7 @@ const Navbar = () => {
                 borderWidth: 1,
                 borderColor: Colors.blanco,
                 borderRadius: 15,
-                width: 300,
+                width: 225,
                 height: 60,
                 marginVertical: 10,
               }}

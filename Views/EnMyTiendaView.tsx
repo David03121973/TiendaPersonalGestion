@@ -3623,70 +3623,14 @@ export default function EnMyTiendaView() {
   } else {
     return (
       <View style={{ flex: 1 }}>
-        {/*Barra superior*/}
-        <Navbar />
-        {/* Vista animada que se despliega hacia la izquierda */}
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            marginTop: "10%",
-          }}
-        >
-          <TouchableOpacity
-            onPress={() => exportarExel()}
-            style={{
-              flexDirection: "row",
-              height: 30,
-              width: "12%",
-              alignItems: "center",
-              justifyContent: "center",
-              shadowColor: Colors.azul_Oscuro, // Color de la sombra
-              shadowOffset: { width: 0, height: 0 },
-              shadowOpacity: 0.6, // Ajusta la opacidad para hacer la sombra más difuminada
-              shadowRadius: 14, // Difuminado
-              borderColor: Colors.verde_claro,
-              borderWidth: 3,
-              padding: 10,
-              borderRadius: 10,
-              marginHorizontal: "1%",
-              marginTop: "1%",
-              backgroundColor: Colors.verde_claro, // Color de fondo del botón
-            }}
-          >
-            <Image
-              source={require("../images/exel.png")}
-              style={{ width: 20, height: 20, marginRight: "10%" }}
-            />
-            <Text
-              style={[
-                styles.radioButtonTextDesktop,
-                sortProductos?.criterioOrden === "option1" &&
-                  styles.radioButtonSelected &&
-                  styles.radioButtonTextSelected,
-              ]}
-            >
-              Exportar a Excel
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "flex-start",
-            marginLeft: "1%",
-          }}
-        >
-          {/*Contenedor para las opciones de busqueda del paciente*/}
-          <LinearGradient
+        {/*Contenedor para las opciones de busqueda del paciente*/}
+        <LinearGradient
             colors={[Colors.azul_Claro, Colors.azul_Oscuro]} // Gradiente de azul oscuro a azul claro
             start={[0, 0]}
             end={[1, 0]}
             style={styles.searchContainerDesktop}
-          >
+          > 
+          {/*
             <Text style={styles.textSearchDesktop}>Nombre del Producto:</Text>
             <CustomTextImputSearch
               style={styles.customTextImputSearchFullDesktop}
@@ -3697,7 +3641,7 @@ export default function EnMyTiendaView() {
             />
 
             <View style={styles.separatorBlanco} />
-
+            
             <View style={{ alignItems: "center", flexDirection: "row" }}>
               <Text style={styles.textSearchDesktop}>SKU:</Text>
               <Text style={styles.textSearchDesktop}></Text>
@@ -3843,8 +3787,69 @@ export default function EnMyTiendaView() {
                   Buscar
                 </Text>
               </TouchableOpacity>
-            </View>
+            </View>*/}
           </LinearGradient>
+
+        {/* Vista animada que se despliega hacia la izquierda */}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            marginTop: "10%",
+          }}
+        >
+          
+          {/*Boton para exportar a exel */}
+          <TouchableOpacity
+            onPress={() => exportarExel()}
+            style={{
+              flexDirection: "row",
+              height: 30,
+              width: "12%",
+              alignItems: "center",
+              justifyContent: "center",
+              shadowColor: Colors.azul_Oscuro, // Color de la sombra
+              shadowOffset: { width: 0, height: 0 },
+              shadowOpacity: 0.6, // Ajusta la opacidad para hacer la sombra más difuminada
+              shadowRadius: 14, // Difuminado
+              borderColor: Colors.verde_claro,
+              borderWidth: 3,
+              padding: 10,
+              borderRadius: 10,
+              marginHorizontal: "1%",
+              marginTop: "1%",
+              backgroundColor: Colors.verde_claro, // Color de fondo del botón
+            }}
+          >
+            <Image
+              source={require("../images/exel.png")}
+              style={{ width: 20, height: 20, marginRight: "10%" }}
+            />
+            <Text
+              style={[
+                styles.radioButtonTextDesktop,
+                sortProductos?.criterioOrden === "option1" &&
+                  styles.radioButtonSelected &&
+                  styles.radioButtonTextSelected,
+              ]}
+            >
+              Exportar a Excel
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            marginLeft: "1%",
+          }}
+        >
+          {/*Barra superior*/}
+          <Navbar />
+          
           {loading ? (
             <ActivityIndicator
               size={150}

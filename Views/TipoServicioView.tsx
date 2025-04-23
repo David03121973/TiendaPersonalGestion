@@ -1361,68 +1361,13 @@ export default function TipoServicioView() {
   } else {
     return (
       <View style={{ flex: 1 }}>
-        {/*Barra superior*/}
-        <Navbar />
-        {/* Vista animada que se despliega hacia la izquierda */}
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            marginTop: "10%",
-          }}
-        >
-          {isPermisoAgregarTipoServicio && (
-            <TouchableOpacity
-              onPress={() => auxSetModalProovedoresDates()}
-              style={{
-                flexDirection: "row",
-                height: 30,
-                width: "12%",
-                alignItems: "center",
-                justifyContent: "center",
-                shadowColor: Colors.azul_Oscuro, // Color de la sombra
-                shadowOffset: { width: 0, height: 0 },
-                shadowOpacity: 0.6, // Ajusta la opacidad para hacer la sombra más difuminada
-                shadowRadius: 14, // Difuminado
-                borderColor: Colors.azul_Claro,
-                borderWidth: 3,
-                padding: 10,
-                borderRadius: 10,
-                marginTop: "1%",
-                marginHorizontal: "1%",
-                backgroundColor: Colors.azul_Claro, // Color de fondo del botón
-              }}
-            >
-              <Text
-                style={[
-                  styles.radioButtonTextDesktop,
-                  selectedOptionTipoOrden === "option1" &&
-                    styles.radioButtonSelected &&
-                    styles.radioButtonTextSelected,
-                ]}
-              >
-                Agregar Tipo de Servicio
-              </Text>
-            </TouchableOpacity>
-          )}
-        </View>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "flex-start",
-            marginLeft: "1%",
-          }}
-        >
-          {/*Contenedor para las opciones de busqueda del paciente*/}
-          <LinearGradient
+        {/*Contenedor para las opciones de busqueda del paciente*/}
+        <LinearGradient
             colors={[Colors.azul_Claro, Colors.azul_Oscuro]} // Gradiente de azul oscuro a azul claro
             start={[0, 0]}
             end={[1, 0]}
             style={styles.searchContainerDesktop}
-          >
+          >{/*
             <Text style={styles.textSearchDesktop}>
               Nombre del tipo de Servicio:
             </Text>
@@ -1532,8 +1477,64 @@ export default function TipoServicioView() {
                   Buscar
                 </Text>
               </TouchableOpacity>
-            </View>
+            </View>*/}
           </LinearGradient>
+        {/* Vista animada que se despliega hacia la izquierda */}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            marginTop: "10%",
+          }}
+        >
+          {isPermisoAgregarTipoServicio && (
+            <TouchableOpacity
+              onPress={() => auxSetModalProovedoresDates()}
+              style={{
+                flexDirection: "row",
+                height: 30,
+                width: "12%",
+                alignItems: "center",
+                justifyContent: "center",
+                shadowColor: Colors.azul_Oscuro, // Color de la sombra
+                shadowOffset: { width: 0, height: 0 },
+                shadowOpacity: 0.6, // Ajusta la opacidad para hacer la sombra más difuminada
+                shadowRadius: 14, // Difuminado
+                borderColor: Colors.azul_Claro,
+                borderWidth: 3,
+                padding: 10,
+                borderRadius: 10,
+                marginTop: "1%",
+                marginHorizontal: "1%",
+                backgroundColor: Colors.azul_Claro, // Color de fondo del botón
+              }}
+            >
+              <Text
+                style={[
+                  styles.radioButtonTextDesktop,
+                  selectedOptionTipoOrden === "option1" &&
+                    styles.radioButtonSelected &&
+                    styles.radioButtonTextSelected,
+                ]}
+              >
+                Agregar Tipo de Servicio
+              </Text>
+            </TouchableOpacity>
+          )}
+        </View>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            marginLeft: "1%",
+          }}
+        >
+          {/*Barra superior*/}
+        <Navbar />
+          
           {loading ? (
             <ActivityIndicator
               size={150}

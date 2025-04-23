@@ -125,11 +125,9 @@ const styles = StyleSheet.create({
   desktopButton: {
     backgroundColor: Colors.azul_Claro,
     borderRadius: 15,
-    width: "4%",
-    minWidth: 120,
-    height: 100,
-    marginHorizontal: 10,
-    marginBottom: 2,
+    width: 225,
+    height: 80,
+    marginBottom: 4,
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#000',
@@ -139,7 +137,7 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   desktopContent: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     height: '100%',

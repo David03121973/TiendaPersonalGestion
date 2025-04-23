@@ -86,23 +86,23 @@ export function HomeScreen() {
     );
   }else{
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, flexDirection: 'row' }}>
         <Navbar />
         <View
           style={{
             flex: 1,
             justifyContent: "space-around",
             alignItems: "center",
-            flexDirection: "row"
+            flexDirection: isMobile ? "column" : "row"
           }}
         >
           <Image
             source={require("../images/solutel.jpg")}
-            style={{ width: "25%", height: "60%", marginTop: "5%" }}
+            style={{ width: isMobile ? "60%" : "25%", height: isMobile ? "55%" : "60%", marginTop: "5%" }}
           />
           <Image
             source={require("../images/solutel1.jpg")}
-            style={{ width: "50%", height: "40%" }}
+            style={{ width: isMobile ? "90%" : "50%", height: isMobile ? "30%" : "40%" }}
           />
         </View>
       </View>

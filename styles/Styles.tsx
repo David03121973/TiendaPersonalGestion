@@ -97,15 +97,15 @@ export const styles = StyleSheet.create({
     color: "#333",
   },
   navbarDekstop: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: "column", // Cambiado a "column"
+    justifyContent: "flex-start", // Cambiado para alinear los elementos al inicio
+    alignItems: "flex-start", // Alinear los elementos a la izquierda
     padding: 15,
-    position: "absolute",
-    top: 0,
-    width: "100%",
+    position: "relative", // Cambiado a "relative" o eliminado
+    width: 250, // Ancho fijo para la barra de navegación
+    height: "100%", // Ocupa toda la altura de la pantalla
     zIndex: 1000,
-  },
+},
   navbarMobile: {
     flexDirection: "column",
     justifyContent: "space-between",
@@ -126,8 +126,10 @@ export const styles = StyleSheet.create({
     paddingVertical: 10, // Añade algo de padding para mejorar el espaciado
   },
   buttonsContainerDesktop: {
-    flexDirection: "row",
-    justifyContent: "flex-start", // Alinea los botones al inicio después de la imagen
+    flexDirection: "column",
+    justifyContent: "center", // Alinea los botones al inicio después de la imagen
+    marginTop: 40,
+    width: "120%",
     flex: 1, // Ocupa el espacio restante
   },
   buttonContainterMovile: {
@@ -136,10 +138,11 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
   searchContainerDesktop: {
-    height: "100%",
-    width: "20%",
-    marginTop: "2%",
+    height: 300,
+    width: "98%",
     borderRadius: 20,
+    marginBottom: -100,
+    marginLeft: "1%",
     shadowOffset: { width: 3, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 5,

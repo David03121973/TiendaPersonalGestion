@@ -2269,34 +2269,14 @@ export default function MovimientosView() {
   } else {
     return (
       <View style={{ flex: 1 }}>
-        {/*Barra superior*/}
-        <Navbar />
-        {/* Vista animada que se despliega hacia la izquierda */}
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            marginTop: "10%",
-          }}
-        ></View>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "flex-start",
-            marginLeft: "1%",
-          }}
-        >
-          {/*Contenedor para las opciones de busqueda del paciente*/}
-          <LinearGradient
+        {/*Contenedor para las opciones de busqueda del paciente*/}
+        <LinearGradient
             colors={[Colors.azul_Claro, Colors.azul_Oscuro]} // Gradiente de azul oscuro a azul claro
             start={[0, 0]}
             end={[1, 0]}
             style={styles.searchContainerDesktop}
           >
-            {isPermisoOpcionesDeCeldaMoverGeneral && (
+            {/*{isPermisoOpcionesDeCeldaMoverGeneral && (
               <Text style={styles.textSearchDesktop}>Nombre del Usuario:</Text>
             )}
             {isPermisoOpcionesDeCeldaMoverGeneral && (
@@ -2570,8 +2550,29 @@ export default function MovimientosView() {
                   Buscar
                 </Text>
               </TouchableOpacity>
-            </View>
+            </View>*/}
           </LinearGradient>
+        {/* Vista animada que se despliega hacia la izquierda */}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            marginTop: "10%",
+          }}
+        ></View>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            marginLeft: "1%",
+          }}
+        >
+          {/*Barra superior*/}
+        <Navbar />
+          
           {loading ? (
             <ActivityIndicator
               size={150}
